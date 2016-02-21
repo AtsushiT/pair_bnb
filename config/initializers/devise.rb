@@ -1,6 +1,16 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  # facebook & twitter API key
+  if Rails.env.production?
+    config.omniauth :facebook, "1671480623116934", "8a7ec67e3448f1fb15a18df3a57fc703"
+    config.omniauth :twitter,  "WJxG1F8WKZNowfmeheaSWlQIX", "GiGVGl3HRtu5MY4NVry4rxFuRIMrZa12BkwtqdfUA3CuUQcV9r"
+  else
+    config.omniauth :facebook, "1671480623116934", "8a7ec67e3448f1fb15a18df3a57fc703"
+    config.omniauth :twitter,  "WJxG1F8WKZNowfmeheaSWlQIX", "GiGVGl3HRtu5MY4NVry4rxFuRIMrZa12BkwtqdfUA3CuUQcV9r"
+  end
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -145,7 +155,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 8..72
+  config.password_length = 4..30
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly

@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 # User management
 gem 'devise'
 
+# User Authentication with facebook and twitter
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
 # Use Figaro for app Security
 gem 'figaro'
 
